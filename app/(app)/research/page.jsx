@@ -66,11 +66,11 @@ function ReportView({ report, onDownload, downloading }) {
             </span>
             <h2 className="text-xl font-bold text-white mt-2 leading-tight">{report.title}</h2>
           </div>
-          <div className="flex gap-2 shrink-0 flex-wrap">
+          <div className="flex gap-2 flex-wrap w-full sm:w-auto">
             <button
               onClick={() => onDownload('docx')}
               disabled={!!downloading}
-              className="flex items-center gap-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg px-3 py-2 text-xs font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg px-3 py-2 text-xs font-medium transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span>📄</span>
               {downloading === 'docx' ? 'Generating...' : 'Download .docx'}
@@ -78,7 +78,7 @@ function ReportView({ report, onDownload, downloading }) {
             <button
               onClick={() => onDownload('md')}
               disabled={!!downloading}
-              className="flex items-center gap-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg px-3 py-2 text-xs font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-1.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg px-3 py-2 text-xs font-medium transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span>📝</span>
               {downloading === 'md' ? 'Generating...' : 'Download .md'}
@@ -101,7 +101,7 @@ function ReportView({ report, onDownload, downloading }) {
           <div key={i} className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
             <button
               onClick={() => setActiveSection(activeSection === i ? null : i)}
-              className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-800/50 transition-colors"
+              className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-800/50 transition-colors cursor-pointer"
             >
               <div className="flex items-center gap-3">
                 <span className="text-xs font-semibold text-blue-400 bg-blue-600/10 border border-blue-500/20 rounded-full w-6 h-6 flex items-center justify-center shrink-0">
@@ -174,7 +174,7 @@ function ReportView({ report, onDownload, downloading }) {
                   href={src.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300 transition-colors leading-relaxed break-all"
+                  className="text-blue-400 hover:text-blue-300 transition-colors leading-relaxed break-all cursor-pointer"
                 >
                   {src.title || src.url}
                 </a>
@@ -347,7 +347,7 @@ export default function ResearchPage() {
           </span>
           <button
             onClick={() => signOut({ callbackUrl: '/login' })}
-            className="border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-white rounded-lg px-3 py-1.5 text-xs font-medium transition-colors"
+            className="border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-white rounded-lg px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer"
           >
             Sign out
           </button>
@@ -424,7 +424,7 @@ export default function ResearchPage() {
                   <button
                     type="submit"
                     disabled={!topic.trim()}
-                    className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 disabled:cursor-not-allowed text-white font-medium rounded-lg px-6 py-2.5 text-sm transition-colors"
+                    className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 disabled:cursor-not-allowed text-white font-medium rounded-lg px-6 py-2.5 text-sm transition-colors cursor-pointer"
                   >
                     Start Research →
                   </button>
@@ -497,7 +497,7 @@ export default function ResearchPage() {
             <div className="mt-6 text-center">
               <button
                 onClick={handleReset}
-                className="border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-white rounded-lg px-5 py-2.5 text-sm font-medium transition-colors"
+                className="border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-white rounded-lg px-5 py-2.5 text-sm font-medium transition-colors cursor-pointer"
               >
                 ← New Research
               </button>
